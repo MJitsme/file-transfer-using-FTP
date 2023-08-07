@@ -60,7 +60,7 @@ int main()
     return 1;
   }
   len=sizeof(client);
-  connfd=connect(sockfd,(SA*)&client,(socklen_t*)&len);
+  connfd=accept(sockfd,(SA*)&client,(socklen_t*)&len);
   printf("Server accept the client..\n");
   recv_file(connfd);
   close(sockfd);
