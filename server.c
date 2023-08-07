@@ -13,7 +13,7 @@
 #define SAI struct sockaddr_in
 
 //function for file sending
-void send_file(int connfd)
+void recv_file(int connfd)
 {
   FILE* fp;
   char buff[MAX];
@@ -62,7 +62,7 @@ int main()
   len=sizeof(client);
   connfd=connect(sockfd,(SA*)&client,(socklen_t*)&len);
   printf("Server accept the client..\n");
-  send_file(connfd);
+  recv_file(connfd);
   close(sockfd);
   return 0;
 }
