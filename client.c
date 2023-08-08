@@ -17,7 +17,7 @@ void send_file(int sockfd)
 {
   char buff[MAX]={0};
   fp=fopen("send.txt","r");
-  while(fgets(data,MAX,fp)!=NULL)
+  while(fgets(buff,MAX,fp)!=NULL)
   {
     send(sockfd,buff,sizeof(buff),0);
     bzero(buff,MAX);
